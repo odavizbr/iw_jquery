@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/iw.css">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/form.js"></script>
+	<script src="js/cadastro.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <title>Form Query</title>
+</head>
+<body>
+	<nav class="navbar">
+		<p class="texto">CONSULTE AS INFORMAÇÕES DO SEU CEP</p>
+	</nav>
+    <div class="container">
+        <form id="frm">
+			<div class="mb-3 mt-5">
+				<label for="endereco" class="form-label">Nome</label>
+				<input type="text" class="form-control" id="nome" name="">
+			</div>
+			<div class="mb-3">
+				<label for="endereco" class="form-label">Data de nascimento</label>
+				<input type="text" class="form-control" id="nasc" name="">
+			</div>
+			<div class="mb-3">
+				<label for="endereco" class="form-label">CPF</label>
+				<input type="text" class="form-control" id="cpf" name="">
+			</div>
+			<div class="mb-3">
+				<label for="endereco" class="form-label">RG</label>
+				<input type="text" class="form-control" id="rg" name="">
+			</div>
+			<div class="mb-3">
+				<label for="endereco" class="form-label">Telefone</label>
+				<input type="text" class="form-control" id="tel" name="">
+			</div>
+            <div class="mb-3">
+				<label for="cep" class="form-label">CEP</label>
+				<input type="text" class="form-control" placeholder="Digite seu CEP" id="cep" name="">
+            </div>
+			<div class="row mt-2">
+				<div class="col">
+					<div class="mb-3">
+						<label for="endereco" class="form-label">Endereço</label>
+						<input type="text" class="form-control" id="endereco" name="">
+					</div>
+					<div class="mb-3">
+						<label for="complemento" class="form-label">Complemento</label>
+						<input type="text" class="form-control" id="complemento" name="" >
+					</div>
+					<div class="mb-3">
+						<label for="bairro" class="form-label">Bairro</label>
+						<input type="text" class="form-control" id="bairro" name="">
+					</div>
+					<div class="mb-3">
+						<label for="cidade" class="form-label">Cidade</label>
+						<input type="text" class="form-control" id="cidade" name="">
+					</div>
+					<div class="mb-3">
+						<label for="nr" class="form-label">Número</label>
+						<input type="text" class="form-control" placeholder="Digite o número do seu lar" id="nr" name="">
+					</div>
+					<label for="nr" class="form-label">Estado</label>
+					<select class="form-select" id="uf" aria-label="Default select example">
+						<option selected>Escolha seu Estado</option>
+						<option value="AC">AC</option>
+						<option value="AL">AL</option>
+						<option value="AP">AP</option>
+						<option value="AM">AM</option>
+						<option value="BA">BA</option>
+						<option value="CE">CE</option>
+						<option value="DF">DF</option>
+						<option value="ES">ES</option>
+						<option value="GO">GO</option>
+						<option value="MA">MA</option>
+						<option value="MT">MT</option>
+						<option value="MS">MS</option>
+						<option value="MG">MG</option>
+						<option value="PA">PA</option>
+						<option value="PB">PB</option>
+						<option value="PR">PR</option>
+						<option value="PE">PE</option>
+						<option value="PI">PI</option>
+						<option value="RJ">RJ</option>
+						<option value="RN">RN</option>
+						<option value="RS">RS</option>
+						<option value="RO">RO</option>
+						<option value="RR">RR</option>
+						<option value="SC">SC</option>
+						<option value="SP">SP</option>
+						<option value="SE">SE</option>
+						<option value="TO">TO</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="endereco" class="form-label">Assunto</label>
+					<input type="text" class="form-control" id="ass" name="">
+				</div>
+				<div class="mb-3">
+					<label for="endereco" class="form-label">Mensagem</label>
+					<input type="text" class="form-control" id="msg" name="">
+				</div>
+				<div class="mb-3">
+					<label for="endereco" class="form-label">Senha</label>
+					<input type="text" class="form-control" id="senha" name="">
+				</div>
+			</div>
+            <div class="row mt-2 mb-3">
+                <div class="col" id="json">
+                    <button type="button" class="btn btn-success cads" onclick="envia()">CADASTRAR</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+	<br><br><br>
+
+	<div class="widcont">
+        <div class="widbox">
+            <h3 class="text-center">Sortable</h3>
+			<p class="text-center">Arraste os itens para organizá-los</p>
+            <ul id="sortable">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+
+        <div class="widbox">
+            <h3 class="text-center">Color Animation</h3>
+            <div id="color-box">A cor irá mudar para rosa</div>
+            <button id="animate-btn" class="btn btn-primary mt-3 w-100">Mudar cor</button>
+        </div>
+
+        <div class="widbox">
+            <h3 class="text-center">Accordion</h3>
+            <div id="accordion">
+                <h3>Item 1</h3>
+                <div>
+                    <p>Conteúdo do Item 1.</p>
+                </div>
+                <h3>Item 2</h3>
+                <div>
+                    <p>Conteúdo do Item 2.</p>
+                </div>
+                <h3>Item 3</h3>
+                <div>
+                    <p>Conteúdo do Item 3.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<br><br><br>
+
+
+	<script src="js/widgets.js"></script>
+
+</body>
+</html>
